@@ -80,7 +80,7 @@ struct TimelineItemPlainStylerView<Content: View>: View {
             context.send(viewAction: .timelineItemMenuAction(itemID: timelineItem.id, action: .reply(isThread: isThread)))
         }.contextMenu {
             TimelineItemContextMenu(item: timelineItem,
-                                       actionProvider: context.viewState.timelineItemMenuActionProvider) { action in
+                                    actionProvider: context.viewState.timelineItemMenuActionProvider) { action in
                 context.send(viewAction: .timelineItemMenuAction(itemID: timelineItem.id, action: action))
             }
         } preview: {

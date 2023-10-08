@@ -31,6 +31,7 @@ struct SetupProject: ParsableCommand {
     }
     
     func linkGitLFS() throws {
+        return
         guard let gitPath = try Utilities.zsh("git --exec-path")?.replacingOccurrences(of: "\n", with: "") else { return }
         
         let lfsPath = URL(fileURLWithPath: gitPath).appendingPathComponent("git-lfs").path
